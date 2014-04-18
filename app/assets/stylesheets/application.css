@@ -11,3 +11,24 @@
  *= require_self
  *= require_tree .
  */
+
+h1 {
+  text-align: center;
+  font-size: 4em;
+  margin-bottom: 0.5em;
+}
+
+img {
+  width: 100%;
+}
+
+.stripe {
+  padding: 20px;
+  background-color: rgba(100, 200, 230, 0.25)
+}
+
+.caption {
+  font-size: 2em;
+  text-align: center;
+  color: gray;
+}
