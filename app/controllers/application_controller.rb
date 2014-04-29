@@ -7,5 +7,16 @@ class ApplicationController < ActionController::Base
     @gif = Gif.find_by_id(params['id'])
     render 'show'
   end
+  
+  def new
+  end
+  
+  def create
+    g = Gif.new
+    g.caption = params['caption']
+    g.url = params['url']
+    g.save
+    redirect_to "/gifs/#{ g.id }"
+  end
 end
  
