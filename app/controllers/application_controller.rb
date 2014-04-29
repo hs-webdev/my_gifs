@@ -18,5 +18,17 @@ class ApplicationController < ActionController::Base
     g.save
     redirect_to "/gifs/#{ g.id }"
   end
+  
+  def edit
+    @gif = Gif.find_by_id(params['id'])
+  end
+  
+  def update
+    g = Gif.find_by_id(params['id'])
+    g.caption = params['caption']
+    g.url = params['url']
+    g.save
+    redirect_to "/gifs/#{ g.id }"
+  end
 end
  
