@@ -4,5 +4,6 @@ MyGifs::Application.routes.draw do
   get '/create_gif' => 'application#create'
   get '/gifs/:id/edit' => 'application#edit'
   get '/update_gif/:id' => 'application#update'
+  get '/gifs/:id/destroy' => 'application#destroy'
 end
 

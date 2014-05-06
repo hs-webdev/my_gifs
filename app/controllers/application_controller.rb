@@ -30,5 +30,12 @@ class ApplicationController < ActionController::Base
     g.save
     redirect_to "/gifs/#{ g.id }"
   end
+  
+  def destroy
+    g = Gif.find_by_id(params['id'])
+    g.destroy
+    
+    
+  end
 end
  
