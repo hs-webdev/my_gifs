@@ -1,6 +1,6 @@
 class GifsController < ApplicationController
-    def show 
-    @gif = Gif.find_by_id(params['id'])
+  def show 
+    @gif = Gif.find_by(id: params['id'])
     render 'show'
   end
   
@@ -8,28 +8,34 @@ class GifsController < ApplicationController
   end
   
   def create
-    g = Gif.new
-    g.caption = params['caption']
-    g.url = params['url']
-    g.save
-    redirect_to "/gifs/#{ g.id }"
+    @gif = Gif.new
+    @gif.caption = params['caption']
+    @gif.url = params['url']
+    if @gif.save
+      redirect_to "/gifs/#{ @gif.id }"
+    else
+      render 'new'
+    end
   end
   
   def edit
-    @gif = Gif.find_by_id(params['id'])
+    @gif = Gif.find_by(id: params['id'])
   end
   
   def update
-    g = Gif.find_by_id(params['id'])
-    g.caption = params['caption']
-    g.url = params['url']
-    g.save
-    redirect_to "/gifs/#{ g.id }"
+    @gif = Gif.find_by(id: params['id'])
+    @gif.caption = params['caption']
+    @gif.url = params['url']
+    if @gif.save
+      redirect_to "/gifs/#{ @gif.id }"
+    else
+      render 'edit'
+    end
   end
   
   def destroy
-    g = Gif.find_by_id(params['id'])
-    g.destroy
+    @gif = Gif.find_by(id: params['id'])
+    @gif.destroy
     redirect_to "/gifs"
   end
   
