@@ -1,19 +1,19 @@
 MyGifs::Application.routes.draw do
   
   # CREATE
-  get '/new_gif' => 'application#new'
-  get '/create_gif' => 'application#create'
+  get '/new_gif' => 'gifs#new'
+  get '/create_gif' => 'gifs#create'
   
   # READ
-  get '/gifs/:id' => 'application#show'
-  get '/gifs' => 'application#index'
+  get '/gifs/:id' => 'gifs#show'
+  get '/gifs' => 'gifs#index'
   
   # UPDATE
-  get '/gifs/:id/edit' => 'application#edit'
-  get '/update_gif/:id' => 'application#update'
+  get '/gifs/:id/edit' => 'gifs#edit'
+  get '/update_gif/:id' => 'gifs#update'
   
   # DESTROY
-  get '/gifs/:id/destroy' => 'application#destroy'
+  get '/gifs/:id/destroy' => 'gifs#destroy'
  
 end
 
