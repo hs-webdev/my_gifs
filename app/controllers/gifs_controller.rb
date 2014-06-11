@@ -1,6 +1,7 @@
 class GifsController < ApplicationController
   def show 
     @gif = Gif.find_by(id: params['id'])
+    @user = User.find_by(id: @gif.user_id)
     render 'show'
   end
   
@@ -11,6 +12,7 @@ class GifsController < ApplicationController
     @gif = Gif.new
     @gif.caption = params['caption']
     @gif.url = params['url']
+    @gif.user_id = params['user_id']
     if @gif.save
       redirect_to "/gifs/#{ @gif.id }"
     else
@@ -26,6 +28,7 @@ class GifsController < ApplicationController
     @gif = Gif.find_by(id: params['id'])
     @gif.caption = params['caption']
     @gif.url = params['url']
+    @gif.user_id = params['user_id']
     if @gif.save
       redirect_to "/gifs/#{ @gif.id }"
     else

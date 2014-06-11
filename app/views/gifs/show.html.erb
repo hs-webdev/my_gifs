@@ -13,7 +13,10 @@
     <div class="col-md-12">
       <div class="caption"><%= @gif.caption %></div>
     </div>
-    <div class="links">
+    <div class="details">
+      <div>User: <%= @user.name %></div>
+    </div>
+    <div class="details">
       <a href="/gifs/<%= @gif.id %>/edit">edit</a> |
       <a href="/gifs/<%= @gif.id %>/destroy">delete</a>
     </div>

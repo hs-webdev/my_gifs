@@ -8,3 +8,9 @@
   <strong>Email</strong>:<br />
   <p><%= @user.email %></p>
 </div>
+
+<ul>
+  <% @gifs.each do |gif| %>
+  <li><img src="<%= gif.url %>" %></li> 
+  <% end %>
+</ul>
