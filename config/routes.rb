@@ -1,5 +1,22 @@
 MyGifs::Application.routes.draw do
  
+  # Routes for the Upvote resource:
+  # CREATE
+  get '/new_upvote' => 'upvotes#new'
+  get '/create_upvote' => 'upvotes#create'
+
+  # READ
+  get '/upvotes' => 'upvotes#index'
+  get '/upvotes/:id' => 'upvotes#show'
+
+  # UPDATE
+  get '/upvotes/:id/edit' => 'upvotes#edit'
+  get '/upvotes/:id/update' => 'upvotes#update'
+
+  # DELETE
+  get '/upvotes/:id/destroy' => 'upvotes#destroy'
+  #------------------------------
+
   # Routes for the User resource:
   # CREATE
   get '/new_user' => 'users#new'

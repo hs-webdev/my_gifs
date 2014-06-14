@@ -1,0 +1,29 @@
+<h1>Upvotes</h1>
+
+<p><a href="/new_upvote">Add a New Upvote</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Gif</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @upvotes.each do |upvote| %>
+    <tr>
+          <td><%= upvote.user.name %></td>
+          <td><%= upvote.gif.url %></td>
+          <td><a href="/upvotes/<%= upvote.id %>">Show</a>
+        </td>
+      <td><a href="/upvotes/<%= upvote.id %>/edit">Edit</a></td>
+      <td><a href="/upvotes/<%= upvote.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
